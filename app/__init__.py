@@ -11,6 +11,8 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    # detecting new articles
+    start_monitoring()
     # Initialize the database with the app
     db.init_app(app)
     with app.app_context():
@@ -23,12 +25,17 @@ def create_app():
     return app
 def start_monitoring():
     try:
-        # get load and define function of scanning change
-        monitor = ArticleMonitor()
 
         # Run the article monitor in a separate thread
-        monitor_thread = threading.Thread(target=monitor.detect_new_articles())
+        monitor_thread = threading.Thread(target=detect_change)
         monitor_thread.daemon = True
         monitor_thread.start()
+    except Exception as e:
+        print(e)
+def detect_change():
+    try:
+        #Load article  and define function of scanning change
+        monitor = ArticleMonitor()
+        monitor.detect_new_articles()
     except Exception as e:
         print(e)
