@@ -44,16 +44,15 @@ class ArticleMonitor:
     #         #     source_url=article_data.get('url', 'https://example.com')
     #         # )
     #         # article = {}
+              print(article_data)
               articleSummary = self.content_processor.summarize(
                     article_data['content']
                 )
 
-              articleImage_url = self.image_generator.generate_image(
-                    article_data.title, articleSummary
-                )
+              articleImage_url = self.image_generator.generate_image_from_text("prompt")
     #         # # Generate summary
-              print(articleSummary)
-              print(articleImage_url)
+              print("summary :", articleSummary)
+              print("imageUrl :",articleImage_url)
     #
     #         # # Generate image
     #         # article.image_url = self.image_generator.generate_image(
