@@ -1,13 +1,6 @@
-import requests
-import os
-from typing import Optional
-import logging
 from app.config import Config
 import requests
-import json
-from PIL import Image
-from io import BytesIO
-from transformers import pipeline
+
 
 
 class ImageGenerator:

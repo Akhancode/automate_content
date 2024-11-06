@@ -1,5 +1,4 @@
 from flask import Blueprint, jsonify
-from .models import Article, Engagement
 
 # Blueprint for organizing routes
 main_bp = Blueprint('main', __name__)

@@ -1,5 +1,5 @@
 import time
-from .utils import load_articles
+from app.utils import load_articles
 from app.services.content_processor import ContentProcessor
 from app.services.image_generator import ImageGenerator
 
