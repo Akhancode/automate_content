@@ -1,0 +1,6 @@
+Flask
+flask_sqlalchemy
+requests
+python-dotenv
+transformers
+torch
