@@ -2,6 +2,7 @@ import time
 from app.utils import load_articles
 from app.services.content_processor import ContentProcessor
 from app.services.image_generator import ImageGenerator
+from app.services.social_poster import mock_social_post
 
 class ArticleMonitor:
     def __init__(self):
@@ -50,14 +51,12 @@ class ArticleMonitor:
                 )
 
               articleImage_url = self.image_generator.generate_image_from_text("prompt")
-    #         # # Generate summary
-              print("summary :", articleSummary)
-              print("imageUrl :",articleImage_url)
+
+              # Simulating the "post" with a print statement
+              mock_social_post(article_data["title"],articleSummary,articleImage_url,)
     #
-    #         # # Generate image
-    #         # article.image_url = self.image_generator.generate_image(
-    #         #     article.title, article.summary
-    #         # )
+
+    #
     #
     #         # # Save to database
     #         # db.session.add(article)

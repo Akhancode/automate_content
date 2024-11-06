@@ -1,0 +1,19 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment folder
+venv/
+.venv/
+
+# Environment variables file
+.env
+
+# Database files (for local SQLite databases)
+*.sqlite3
+
+# Log files
+*.log
+
+Thumbs.db       # Windows
