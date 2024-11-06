@@ -7,3 +7,4 @@ class Config:
     SQLALCHEMY_DATABASE_URI = 'sqlite:///content_automation.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MONITOR_INTERVAL = 5  # Check for new articles every 10 seconds
+    IMAGE_API_KEY = ""
