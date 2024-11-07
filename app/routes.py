@@ -20,10 +20,17 @@ def image_generate():
 
     print(imageurl)
     return jsonify({"imageUrl": imageurl})
-@main_bp.route('/engagment', methods=['POST'])
-def engagment():
+@main_bp.route('/engagement', methods=['POST'])
+def engagement():
     data = request.get_json()
     response= save_engagment.save_engagement(data["title"],data["summary"],data["image_url"],data["views"],data["shares"])
+    return jsonify(response)
+
+@main_bp.route('/engagement', methods=['GET'])
+def getAllEngagement():
+    data = request.get_json()
+    allEngagements= Engagement.query.all()
+    response = [engagement.to_dict() for engagement in allEngagements]
     return jsonify(response)
 
 
