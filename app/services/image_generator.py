@@ -54,7 +54,7 @@ class ImageGenerator:
                 "accept": "image/*"
             }
             data = {
-                "prompt": f"Create a Image for Article for following summary :  {prompt}" ,
+                "prompt": prompt,
                 # "output_format": "jpeg",
                 "width": 1024,
                 "height": 1024,
