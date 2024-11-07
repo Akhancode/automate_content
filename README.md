@@ -74,7 +74,7 @@ This project automates the process of detecting new articles from a JSON feed, g
 
 ## Usage
 
-1. **Monitor JSON Feed**: The script will automatically detect new articles from a local JSON feed (`feed.json`). You can simulate adding new articles to this file to trigger the automation. Please Note : Default values will not feed  as it may triggers the processing API and to Avoid Image Generation from getting Exhaust (only 10 credits) before testing  . Monitoring function will scan for change in JSON and all of this related to monitoring will run in seperate thread so the main thread remain open to REST api.
+1. **Monitor JSON Feed**: The script will automatically detect new articles from a local JSON feed (`feed.json`). You can simulate adding new articles with **NOT EXISTING UNIQUE ID** to this file to trigger the automation. Please Note : Default values will not feed  as it may triggers the processing API and to Avoid Image Generation from getting Exhaust (only 10 credits) before testing  . Monitoring function will scan for change in JSON and all of this related to monitoring will run in seperate thread so the main thread remain open to REST api.
 
 3. **Automated Content Processing**: Each new article will have a summary generated, an AI-driven image created, and then a mock post to a social media channel (just prints ).
 
