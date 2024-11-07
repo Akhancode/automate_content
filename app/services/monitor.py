@@ -11,7 +11,7 @@ class ArticleMonitor:
         self.existing_ids = set()
         self._initialize_existing_articles()
         self.content_processor = ContentProcessor()
-        self.image_generator = ImageGenerator()
+        self.image_generator = ImageGenerator("https://placeholder.com/400x300")
 
     def _initialize_existing_articles(self):
         """Loads initial articles into memory to track new ones."""
@@ -40,19 +40,17 @@ class ArticleMonitor:
     def process_article(self, article_data):
     #     """Process a new article."""
         try:
-    #         # Create new article record
-    #         # article = Article(
-    #         #     title=article_data['title'],
-    #         #     content=article_data['content'],
-    #         #     source_url=article_data.get('url', 'https://example.com')
-    #         # )
-    #         # article = {}
               print(article_data)
               articleSummary = self.content_processor.summarize(
                     article_data['content']
                 )
 
-              articleImage_url = self.image_generator.generate_image_from_text("prompt")
+
+              # Generate Image using Stable ai
+              articleImage_url = self.image_generator.generate_image_from_text(articleSummary)
+
+              # Generate Image using Deep ai - no credit
+              # articleImage_url = self.image_generator.generate_image_from_text_deep_ai(articleSummary)
 
               # Simulating the "post" with a print statement
               mock_social_post(article_data["title"],articleSummary,articleImage_url,)
@@ -63,19 +61,7 @@ class ArticleMonitor:
               response = save_engagement(article_data["title"], articleSummary, articleImage_url, views,
                                                           shares)
               print ("Stored to DB",jsonify(response))
-    #
 
-    #
-    #
-    #         # # Save to database
-    #         # db.session.add(article)
-    #         # db.session.commit()
-    #
-    #         # Post to social media
-    #         # self.social_poster.post_article(article)
-    #         #
-    #         # article.processed = True
-    #         # db.session.commit()
     #
         except Exception as e:
             print(f"Error processing article: {e}")

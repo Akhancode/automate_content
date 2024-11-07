@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify , request
-from .services import  save_engagment
+from .services import  save_engagment,image_generator
 from .models import Engagement
 # Blueprint for organizing routes
 main_bp = Blueprint('main', __name__)
@@ -7,6 +7,19 @@ main_bp = Blueprint('main', __name__)
 @main_bp.route('/status', methods=['GET'])
 def status():
     return jsonify({"status": "Service is up and running"})
+@main_bp.route('/image-generate', methods=['GET'])
+def image_generate():
+    data = request.get_json()
+    img=image_generator.ImageGenerator("https://placeholder.com/400x300")
+    # using - stable diffusion api
+    imageurl =img.generate_image_from_text(data["prompt"])
+
+    # imageurl =img.generate_image_replicate(data["prompt"])
+    # imageurl =img.generate_image_from_text_deep_ai(data["prompt"])
+    # imageurl =img.generate_dalle_image(data["prompt"])
+
+    print(imageurl)
+    return jsonify({"imageUrl": imageurl})
 @main_bp.route('/engagment', methods=['POST'])
 def engagment():
     data = request.get_json()

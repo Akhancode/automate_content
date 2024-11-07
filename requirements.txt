@@ -5,6 +5,8 @@ python-dotenv
 transformers
 torch
 Pillow
+diffusers
+
 
 
 
