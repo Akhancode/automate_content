@@ -74,13 +74,18 @@ This project automates the process of detecting new articles from a JSON feed, g
 
 ## Usage
 
-1. **Monitor JSON Feed**: The script will automatically detect new articles from a local JSON feed (`feed.json`). You can simulate adding new articles to this file to trigger the automation.
+1. **Monitor JSON Feed**: The script will automatically detect new articles from a local JSON feed (`feed.json`). You can simulate adding new articles to this file to trigger the automation. Please Note : Default values will not feed  as it may triggers the processing API and to Avoid Image Generation from getting Exhaust (only 10 credits) before testing  . Monitoring function will scan for change in JSON and all of this related to monitoring will run in seperate thread so the main thread remain open to REST api.
 
-2. **Automated Content Processing**: Each new article will have a summary generated, an AI-driven image created, and then a mock post to a social media channel (just prints ).
+3. **Automated Content Processing**: Each new article will have a summary generated, an AI-driven image created, and then a mock post to a social media channel (just prints ).
 
-3. **Engagement Data**: User engagement (views, shares, etc.) will be simulated and stored in an SQLite database for tracking purposes.
+4. **Engagement Data**: User engagement (views, shares, etc.) will be simulated and stored in an SQLite database for tracking purposes.
 
-4. **REST API**: A simple API is exposed to retrieve the top 3 articles based on engagement data.
+5. **REST API**: A REST API endpoint provides access to the top 3 articles based on engagement metrics.
+
+   - **Default Behavior**: Returns the top 3 articles for both views and shares.
+   - **Query Parameter**:
+     - `type=most_viewed`: Returns the top 3 articles based on views only.
+     - `type=most_shared`: Returns the top 3 articles based on shares only.
 
 ### API Endpoints
 
