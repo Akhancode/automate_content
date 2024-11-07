@@ -36,11 +36,12 @@ def getAllEngagement():
 
 @main_bp.route('/top-engagements', methods=['GET'])
 def get_top_engagements():
-    query_type = request.args.get('type')
+    query_type = request.args.get('type',"default")
     if query_type == 'most_shared':
-        top_engagements = Engagement.query.order_by(Engagement.shares.desc()).limit(3).all
+        
+        top_engagements = Engagement.query.order_by(Engagement.shares.desc()).limit(3).all()
     elif query_type == 'most_viewed':
-        top_engagements = Engagement.query.order_by(Engagement.views.desc()).limit(3).all
+        top_engagements = Engagement.query.order_by(Engagement.views.desc()).limit(3).all()
     else :
         # Both - default case
         top_engagements_views = Engagement.query.order_by(Engagement.views.desc()).limit(3).all()
@@ -54,4 +55,5 @@ def get_top_engagements():
 
 
     results = [engagement.to_dict() for engagement in top_engagements]
+    print(query_type,"----------------------------")
     return jsonify(results), 200
