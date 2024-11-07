@@ -43,6 +43,7 @@ class ImageGenerator:
     def generate_image_from_text(self, prompt="cat with shoe"):
         os.makedirs("images", exist_ok=True)
         try:
+            # createing random name
             short_prompt = prompt.replace(" ", "")[:10]
             random_number = random.randint(10000, 99999)
             filename = f"{short_prompt}_{random_number}.jpeg"
@@ -53,7 +54,7 @@ class ImageGenerator:
                 "accept": "image/*"
             }
             data = {
-                "prompt": prompt,
+                "prompt": f"Create a Image for Article for following summary :  {prompt}" ,
                 # "output_format": "jpeg",
                 "width": 1024,
                 "height": 1024,
