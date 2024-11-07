@@ -56,11 +56,13 @@ class ArticleMonitor:
 
               # Simulating the "post" with a print statement
               mock_social_post(article_data["title"],articleSummary,articleImage_url,)
+              views = article_data.get("views",0)
+              shares = article_data.get("shares",0)
 
-              # response = save_engagement(data["title"], data["summary"], data["image_url"], data["views"],
-              #                                             data["shares"])
-              response = save_engagement("title","summary", "image_url", "views","shares")
-              return jsonify(response)
+
+              response = save_engagement(article_data["title"], articleSummary, articleImage_url, views,
+                                                          shares)
+              print ("Stored to DB",jsonify(response))
     #
 
     #
