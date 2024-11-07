@@ -28,7 +28,6 @@ def engagement():
 
 @main_bp.route('/engagement', methods=['GET'])
 def getAllEngagement():
-    data = request.get_json()
     allEngagements= Engagement.query.all()
     response = [engagement.to_dict() for engagement in allEngagements]
     return jsonify(response)
