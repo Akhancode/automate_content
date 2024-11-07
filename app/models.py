@@ -1,7 +1,9 @@
 
 from datetime import datetime
 # Initialize the SQLAlchemy instance
-from app import db
+from flask_sqlalchemy import SQLAlchemy
+# Initialize the SQLAlchemy instance
+db = SQLAlchemy()
 
 class Engagement(db.Model):
     __tablename__ = 'engagements'

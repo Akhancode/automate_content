@@ -1,8 +1,10 @@
 import time
+from flask import jsonify
 from app.utils import load_articles
 from app.services.content_processor import ContentProcessor
 from app.services.image_generator import ImageGenerator
 from app.services.social_poster import mock_social_post
+from app.services.save_engagment import  save_engagement
 
 class ArticleMonitor:
     def __init__(self):
@@ -54,6 +56,11 @@ class ArticleMonitor:
 
               # Simulating the "post" with a print statement
               mock_social_post(article_data["title"],articleSummary,articleImage_url,)
+
+              # response = save_engagement(data["title"], data["summary"], data["image_url"], data["views"],
+              #                                             data["shares"])
+              response = save_engagement("title","summary", "image_url", "views","shares")
+              return jsonify(response)
     #
 
     #
