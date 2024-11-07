@@ -80,7 +80,12 @@ This project automates the process of detecting new articles from a JSON feed, g
 
 4. **Engagement Data**: User engagement (views, shares, etc.) will be simulated and stored in an SQLite database for tracking purposes.
 
-5. **REST API**: A simple API is exposed to retrieve the top 3 articles based on engagement data.
+5. **REST API**: A REST API endpoint provides access to the top 3 articles based on engagement metrics.
+
+   - **Default Behavior**: Returns the top 3 articles for both views and shares.
+   - **Query Parameter**:
+     - `type=most_viewed`: Returns the top 3 articles based on views only.
+     - `type=most_shared`: Returns the top 3 articles based on shares only.
 
 ### API Endpoints
 
