@@ -10,7 +10,6 @@ This project automates the process of detecting new articles from a JSON feed, g
 - [Postman Collection](#postman-collection)
 - [API Documentation](#api-documentation)
 - [Screenshot](#screenshot)
-- [License](#license)
 
 ## Technologies Used
 - **Python**: Programming language for backend and automation.
@@ -60,16 +59,18 @@ This project automates the process of detecting new articles from a JSON feed, g
 
 6. **Set up environment variables**:
     Create a `.env` file in the root directory with the following variables:
+   - [Download env file ](https://drive.google.com/file/d/1psB2vfGBG3EbTeljT3FtalMngTmg30ha/view?usp=sharing)
+ 
     ```plaintext
     STABILITY_API_KEY = api_key
     ```
 
-7. **Run the server**:
+8. **Run the server**:
     ```bash
     flask run
     ```
 
-8. **Access the application**: By default, the server will run on [http://localhost:5000](http://localhost:5000).
+9. **Access the application**: By default, the server will run on [http://localhost:5000](http://localhost:5000).
 
 ## Usage
 
