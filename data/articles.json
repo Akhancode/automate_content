@@ -1,44 +1,42 @@
 [
     {
-        "id": 1,
-        "title": "Understanding Python",
-        "content": "Python is a high-level programming language known for its simplicity.",
-        "url": "http://example.com/understanding-python"
-    },
-    {
         "id": 2,
-        "title": "Getting Started with Flask",
-        "content": "Flask is a micro web framework for Python based on Werkzeug and Jinja2.",
-        "url": "http://example.com/getting-started-flask"
+        "title": "Getting Started with JavaScript",
+        "content": "JavaScript is a versatile programming language that powers the dynamic behavior on websites. Originally developed to enhance web pages, it has now evolved into a robust language used for front-end, back-end, and even mobile development. JavaScript allows developers to add interactivity to websites, from simple animations to complex web applications. Today, it is an essential part of web development, often alongside HTML and CSS. Understanding JavaScript is critical as it is widely used across industries and offers vast career opportunities. The language is known for its flexibility due to its loosely typed nature, meaning variables can be reassigned to different data types without errors. This feature enables faster prototyping, though it requires careful handling in larger applications. Another important aspect is asynchronous programming with JavaScript. Through features like callbacks, promises, and async/await, JavaScript can handle multiple operations concurrently, crucial for applications that rely on data from servers or databases. Additionally, JavaScript's event-driven nature makes it perfect for handling user interactions. Frameworks and libraries like React, Angular, and Vue have revolutionized front-end development by allowing reusable components, state management, and easier DOM manipulation. On the backend, Node.js has empowered JavaScript to handle server-side operations, making it possible to build entire applications with just one language. JavaScript is known for its large community and rich ecosystem of packages, tools, and resources. The importance of JavaScript in modern development cannot be overstated, making it a valuable skill for anyone interested in building interactive and engaging digital experiences.",
+        "url": "http://example.com/getting-started-javascript",
+        "shares": 15,
+        "views": 45
     },
-
-        {
-        "id": 4,
-        "title": "Getting Started with Flask 2",
-        "content": "Flask is a micro web framework for Python based on Werkzeug and Jinja2.",
-        "url": "http://example.com/getting-started-flask"
-    },
-
-        {
-        "id": 5,
-        "title": "Getting Started with Flask 2",
-        "content": "Flask is a micro web framework for Python based on Werkzeug and Jinja2.",
-        "url": "http://example.com/getting-started-flask"
-    },
-
-        {
-        "id": 6,
-        "title": "Getting Started with Flask 2",
-        "content": "Flask is a micro web framework for Python based on Werkzeug and Jinja2.",
-        "url": "http://example.com/getting-started-flask"
-    },
-
     {
-        "id": 12,
-
-
-        "title": "Getting Started with Flask 2",
-        "content": "The price of a stock changes based on the demand for shares from new investors who want to buy, or the supply of shares from existing investors who want to sell. Investors decide to buy or sell based on the company’s performance, economic conditions, the current price of the shares, and other factors. Not every investor makes decisions based on the same criteria, and what might not seem rational to one investor, will seem perfectly acceptable to another. This dynamic keeps shares trading hands and makes future prices difficult to predict. People purchase stocks for a lot of reasons. Some hold onto shares, looking for income from dividends. Others might think a stock will rise, so they snap it up, trying to buy low and sell high. Still, others might be interested in having a say in how particular companies are run. That’s because you can vote at shareholder meetings based on the number of shares you own. Both “stock market” and “stock exchange” are often used interchangeably, but they’re not the same. Traders in the stock market buy or sell shares on one or more stock exchanges, which are only part of the overall stock market. The major U.S. stock exchanges include the New York Stock Exchange (NYSE) and Nasdaq. How Does the Stock Market Work? The Stock Market Defined The stock market is a vast, complex network of trading activities where shares of companies are bought and sold, protected by laws against fraud and other unfair trading practices. It plays a crucial role in modern economies by enabling money to move between investors and companies. Sometimes the best way to see how something works is to look at its parts. In that light, let's review the major elements of the stock market, from the companies selling shares to stocks to exchanges to the indexes that give us a snapshot of the stock market's health: What Are Public Companies? Not all companies can offer stock to the public. Only public companies that have offered their shares for the first time in an initial public offering (IPO) can have their stock bought and sold on exchanges like the NYSE or Nasdaq. From the time a company starts planning its IPO through all the time its shares are sold to the public, it must meet stringent regulations and financial disclosure laws. The primary market could involve raising money and giving parts of a business to friends, family, and others in direct trades, making it the oldest way of dividing shares in a company. Since the primary market is where a company sells its securities directly, today it includes IPOs, follow-on public offerings, private placements, debt offerings, and other times when a company sells part of itself to raise funds. From then on, stocks are traded in the secondary market on exchanges or over the counter. More than 58,000 companies worldwide are publicly traded today. What Are Stocks: Buying and Selling Shares When you buy a stock or a share, you're getting a piece of that company. How much of the company you own depends on the number of shares the company has issued and the number of shares you own. If it's a small, private company, a single share could represent a large part of the company. Major public companies often have millions, even billions, of shares. For example, Apple Inc. (AAPL) has billions of shares in circulation, so a single share is just a tiny fraction of the company. Owning shares gives you the right to part of the company's profits, often paid as dividends, and sometimes the right to vote on company matters. What Is a Stock Exchange? Once a company goes public, its stocks can be traded freely on the stock market. This means that investors can buy and sell shares among themselves. This is the secondary market for stocks, and most trading is done through stock exchanges. This part of the larger stock market dates to at least 1602 in Amsterdam, evolving since into some of the world's most complex institutions. Stock exchanges are organized and regulated places (much trading today is virtual) where stocks and other types of securities are bought and sold. They play a crucial role in the financial system by providing a platform for companies to raise money by selling their stocks and bonds to the public. The NYSE and Nasdaq are prime examples, serving as central locations for the buying and selling of stocks. There are major exchanges worldwide, such as the London Stock Exchange, the Tokyo Stock Exchange, and the Shanghai Stock Exchange. Each has its own internal rules, and investors follow different national and local laws. These are meant to ensure fair trading practices and to keep investors confident in dealing there. They also provide transparency in the trading process, giving real-time information on securities prices, which is why it's so easy to find up-to-date stock prices on just about any financial news site. Stock exchanges wouldn't live up to their name, though, if they didn't offer liquidity, the ability to buy or sell stocks relatively easily. ",
-        "url": "http://example.com/getting-started-flask"
+        "id": 3,
+        "title": "Mastering CSS for Web Design",
+        "content": "CSS, or Cascading Style Sheets, is a style sheet language that defines the look and feel of a website. By controlling the layout, colors, fonts, and other visual aspects, CSS brings life to otherwise plain HTML pages. Learning CSS is crucial for web designers and developers because it allows for separation of content and presentation. CSS follows a rule-based syntax, meaning you can apply styles globally or to specific elements on a page. This language uses selectors to target HTML elements and apply properties to them, such as color, font-size, and margins. In recent years, CSS has evolved to include new functionalities, such as Flexbox and Grid, which make creating complex layouts simpler and more manageable. Flexbox provides a one-dimensional layout system, ideal for rows or columns, while Grid offers a two-dimensional layout, perfect for more intricate designs. These tools reduce the need for external libraries and simplify responsive design, a must in today's mobile-first world. CSS animations and transitions also enable smooth effects without needing JavaScript. Moreover, pre-processors like Sass and Less have extended CSS capabilities, adding variables, nesting, and functions to make code more modular and maintainable. Mastering CSS empowers developers to create visually appealing, user-friendly websites that work across devices. This knowledge is indispensable for anyone looking to build professional, responsive, and accessible web applications.",
+        "url": "http://example.com/mastering-css",
+        "shares": 8,
+        "views": 27
+    },
+    {
+        "id": 4,
+        "title": "Introduction to Cloud Computing",
+        "content": "Cloud computing has transformed the way businesses operate by providing scalable and cost-effective resources over the internet. Rather than maintaining physical servers, companies can rent computing power, storage, and applications from cloud providers like AWS, Microsoft Azure, and Google Cloud. Cloud computing offers a range of models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS), each serving different needs. IaaS allows businesses to rent virtual machines and storage, PaaS provides a platform for application development, and SaaS delivers software applications via the web. Cloud computing is particularly beneficial for handling large data sets, enabling companies to analyze information on a massive scale without investing in expensive infrastructure. With the cloud, companies can easily scale resources up or down based on demand, ensuring they pay only for what they use. This flexibility has led to widespread adoption across various industries, from healthcare to finance. Security in cloud computing is a shared responsibility; providers handle infrastructure security, while customers manage data security and compliance. As businesses increasingly move to the cloud, understanding cloud principles, tools, and best practices is vital for modern IT professionals. Cloud computing not only reduces costs but also accelerates innovation, making it a cornerstone of digital transformation in today’s world.",
+        "url": "http://example.com/intro-cloud-computing",
+        "shares": 22,
+        "views": 70
+    },
+    {
+        "id": 5,
+        "title": "Data Science Fundamentals",
+        "content": "Data science is an interdisciplinary field that combines statistics, programming, and domain knowledge to extract insights from data. At its core, data science involves collecting, cleaning, analyzing, and interpreting data to solve real-world problems. Python and R are popular programming languages in this field due to their extensive libraries for data analysis and visualization. Data science techniques range from simple descriptive analytics to complex machine learning algorithms, which can predict future outcomes based on historical data. In today’s data-driven world, companies use data science to make better business decisions, optimize processes, and personalize customer experiences. A critical step in data science is data cleaning, where noisy, incomplete, or inconsistent data is fixed to improve the quality of analysis. Exploratory data analysis (EDA) then allows scientists to identify trends and patterns in the data, often using visualization tools like Matplotlib or Seaborn. Machine learning algorithms, such as linear regression, decision trees, and neural networks, help build predictive models. Data scientists also need strong communication skills to explain their findings to non-technical stakeholders. Data science is increasingly important in fields like healthcare, finance, and marketing. As data continues to grow, the demand for skilled data scientists will also rise, making it an exciting career with opportunities for impactful work.",
+        "url": "http://example.com/data-science-fundamentals",
+        "shares": 30,
+        "views": 120
+    },
+    {
+        "id": 6,
+        "title": "Exploring Machine Learning Algorithms",
+        "content": "Machine learning (ML) is a branch of artificial intelligence (AI) that allows systems to learn from data and improve over time without explicit programming. ML algorithms analyze patterns in historical data to make predictions or decisions, and they are widely used in applications like recommendation systems, image recognition, and predictive analytics. Some common types of ML algorithms include supervised learning, unsupervised learning, and reinforcement learning. In supervised learning, the algorithm is trained on labeled data, allowing it to predict outcomes based on input features. Unsupervised learning, on the other hand, deals with unlabeled data and is used for tasks like clustering and dimensionality reduction. Reinforcement learning enables an agent to make decisions in an environment to maximize some notion of cumulative reward. Popular algorithms include linear regression, decision trees, k-means clustering, and neural networks. With the rise of big data, ML has become more accessible, and frameworks like TensorFlow and Scikit-Learn have simplified model development. Despite its potential, ML comes with challenges such as data quality, bias, and the need for large computational resources. As organizations across industries adopt ML to automate processes and enhance products, understanding ML basics is essential for anyone interested in data-driven technology and AI applications.",
+        "url": "http://example.com/machine-learning-algorithms",
+        "shares": 18,
+        "views": 65
     }
 ]
