@@ -23,7 +23,6 @@ This project automates the process of detecting new articles from a JSON feed, g
 ### Prerequisites
 - **Python** (version 3.7+ recommended)
 - **SQLite** (included in Python standard library)
-- **OpenAI API Key** (for DALL-E image generation)
 
 ### Steps
 
