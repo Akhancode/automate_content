@@ -1,4 +1,5 @@
 import time
+import os
 from flask import jsonify
 from app.utils import load_articles
 from app.services.content_processor import ContentProcessor
@@ -45,15 +46,18 @@ class ArticleMonitor:
                     article_data['content']
                 )
 
-
+              articleImage_url = "https://files.oaiusercontent.com/file-ZcGVGrCcMOG2e1nDaoc7EpRx?se=2024-11-13T12%3A04%3A42Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2b8868a4-9dff-4250-88c8-bb99ca08a2f0.webp&sig=HbHCd/wAITn7CfhvYlRt6OIWjQVp%2Bu/KCM0oIabXzUs%3D"
               # Generate Image using Stable ai
-              articleImage_url = self.image_generator.generate_image_from_text(articleSummary)
+              if(os.getenv('DEVELOPMENT') != "true"):
+                  articleImage_url = self.image_generator.generate_image_from_text(articleSummary)
+
+
 
               # Generate Image using Deep ai - no credit
               # articleImage_url = self.image_generator.generate_image_from_text_deep_ai(articleSummary)
 
               # Simulating the "post" with a print statement
-              mock_social_post(article_data["title"],articleSummary,articleImage_url,)
+              mock_social_post(article_data["title"],articleSummary,articleImage_url,article_url=article_data["url"])
               views = article_data.get("views",0)
               shares = article_data.get("shares",0)
 

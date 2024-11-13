@@ -8,4 +8,6 @@ def mock_social_post(title, summary, image_url, article_url="https://example.com
         "article_url": article_url,
     }
     print("💥Mock Social Media Post:", post)
+
+
     return post
