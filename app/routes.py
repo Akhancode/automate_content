@@ -49,7 +49,7 @@ def add_article():
 @main_bp.route('/status', methods=['GET'])
 def status():
     # Your Twitter API credentials
-    post_tweet_with_image("testing Summary xyz",os.path.join("images", "cat.jpeg"))
+    # post_tweet_with_image("testing Summary xyz","http://localhost:9000",os.path.join("images", "cat.jpeg"))
 
     return jsonify({"status": "Service is up and running"})
 @main_bp.route('/image-generate', methods=['GET'])

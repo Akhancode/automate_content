@@ -82,7 +82,7 @@ def post_image_with_summary_on_linkedin(access_token, image_path, summary, linke
         print(f"Error creating post: {post_response.status_code}, {post_response.text}")
 
 
-def post_tweet_with_image(tweet_message, image_path):
+def post_tweet_with_image(summary,articleUrl, image_path):
     # Your Twitter API credentials from environment variables
     API_KEY = os.getenv('X_CONSUMER_API_KEY')
     API_SECRET_KEY = os.getenv('X_CONSUMER_API_SECRET')
@@ -106,7 +106,7 @@ def post_tweet_with_image(tweet_message, image_path):
 
     # Upload media and post tweet
     media = api.media_upload(image_path)
-    response = client.create_tweet(text=tweet_message, media_ids=[media.media_id])
+    response = client.create_tweet(text=f"{summary}\n\n{articleUrl}", media_ids=[media.media_id])
 
     print("Tweet posted successfully!", response)
     return response
@@ -124,6 +124,7 @@ def mock_social_post(title, summary, image_url=defaultImagePath, article_url="ht
     sub = os.getenv('LINKEDIN_APP_ID')
     owner_id = f"urn:li:person:{sub}"
     post_image_with_summary_on_linkedin(accessToken, image_url, summary, owner_id,article_url)
+    post_tweet_with_image(summary,article_url,image_url)
     # print("💥Mock Social Media Post:", post)
 
 
