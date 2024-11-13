@@ -40,83 +40,11 @@
         "views": 65
     },
     {
-        "title": "q",
-        "content": "2",
-        "articleUrl": "https://stackoverflow.com/questions/33396064/flask-template-not-found",
-        "views": "1",
-        "shares": "2",
-        "id": "664f6a07-084d-40f0-b280-fe48ce1d150c"
-    },
-    {
-        "title": "q",
-        "content": "w",
-        "articleUrl": "https://stackoverflow.com/questions/33396064/flask-template-not-found",
+        "title": "Amjad",
+        "content": "This is new Test",
+        "url": "https://localhost:5000/",
         "views": "3",
         "shares": "5",
-        "id": "84744508-6992-4fa6-8529-40d3e3e2a6d3"
-    },
-    {
-        "title": "qwerty",
-        "content": "qwerty qwertyhujidnfmdnf",
-        "articleUrl": "https://stackoverflow.com/questions/33396064/flask-template-not-found",
-        "views": "3",
-        "shares": "5",
-        "id": "2c053dc0-b950-4d0f-b3b1-8f1fdda87d27"
-    },
-    {
-        "content": "Machine learning (ML) is a branch of artificial intelligence (AI) that allows systems to learn from data and improve over time without explicit programming. ML algorithms analyze patterns in historical data to make predictions or decisions, and they are widely used in applications like recommendation systems, image recognition, and predictive analytics. Some common types of ML algorithms include supervised learning, unsupervised learning, and reinforcement learning. In supervised learning, the algorithm is trained on labeled data, allowing it to predict outcomes based on input features. Unsupervised learning, on the other hand, deals with unlabeled data and is used for tasks like clustering and dimensionality reduction. Reinforcement learning enables an agent to make decisions in an environment to maximize some notion of cumulative reward. Popular algorithms include linear regression, decision trees, k-means clustering, and neural networks. With the rise of big data, ML has become more accessible, and frameworks like TensorFlow and Scikit-Learn have simplified model development. Despite its potential, ML comes with challenges such as data quality, bias, and the need for large computational resources. As organizations across industries adopt ML to automate processes and enhance products, understanding ML basics is essential for anyone interested in data-driven technology and AI applications.",
-        "shares": 18,
-        "title": "2Exploring Machine Learning Algorithms",
-        "url": "http://example.com/machine-learning-algorithms",
-        "views": 65,
-        "id": "24367b89-4f8e-4af9-9bf6-d43494e765cd"
-    },
-    {
-        "content": "Machine",
-        "shares": 18,
-        "title": "2Exploring Machine Learning Algorithms",
-        "url": "http://example.com/machine-learning-algorithms",
-        "views": 65,
-        "id": "1ca3d95c-d88d-4fd2-a72c-82b532d2818d"
-    },
-    {
-        "title": "test",
-        "content": "test-content",
-        "url": "http://localhost:5000/",
-        "views": "30",
-        "shares": "20",
-        "id": "9d3d8cae-6da9-443d-81b1-0046f9378131"
-    },
-    {
-        "title": "test2",
-        "content": "JavaScript is a versatile programming language that powers the dynamic behavior on websites. Originally developed to enhance web pages, it has now evolved into a robust language used for front-end, back-end, and even mobile development. JavaScript allows developers to add interactivity to websites, from simple animations to complex web applications. Today, it is an essential part of web development, often alongside HTML and CSS. Understanding JavaScript is critical as it is widely used across industries and offers vast career opportunities. The language is known for its flexibility due to its loosely typed nature, meaning variables can be reassigned to different data types without errors. This feature enables faster prototyping, though it requires careful handling in larger applications. Another important aspect is asynchronous programming with JavaScript. Through features like callbacks, promises, and async/await, JavaScript can handle multiple operations concurrently, crucial for applications that rely on data from servers or databases. Additionally, JavaScript's event-driven nature makes it perfect for handling user interactions. Frameworks and libraries like React, Angular, and Vue have revolutionized front-end development by allowing reusable components, state management, and easier DOM manipulation. On the backend, Node.js has empowered JavaScript to handle server-side operations, making it possible to build entire applications with just one language. JavaScript is known for its large community and rich ecosystem of packages, tools, and resources. The importance of JavaScript in modern development cannot be overstated, making it a valuable skill for anyone interested in building interactive and engaging digital experiences",
-        "url": "http://localhost:5000/",
-        "views": "3",
-        "shares": "4",
-        "id": "c7f95f8d-a823-4165-98c2-90a1317f6d89"
-    },
-    {
-        "title": "abc",
-        "content": "JavaScript is a versatile programming language that powers the dynamic behavior on websites. Originally developed to enhance web pages, it has now evolved into a robust language used for front-end, back-end, and even mobile development. JavaScript allows developers to add interactivity to websites, from simple animations to complex web applications. Today, it is an essential part of web development, often alongside HTML and CSS. Understanding JavaScript is critical as it is widely used across industries and offers vast career opportunities. The language is known for its flexibility due to its loosely typed nature, meaning variables can be reassigned to different data types without errors. This feature enables faster prototyping, though it requires careful handling in larger applications. Another important aspect is asynchronous programming with JavaScript. Through features like callbacks, promises, and async/await, JavaScript can handle multiple operations concurrently, crucial for applications that rely on data from servers or databases. Additionally, JavaScript's event-driven nature makes it perfect for handling user interactions. Frameworks and libraries like React, Angular, and Vue have revolutionized front-end development by allowing reusable components, state management, and easier DOM manipulation. On the backend, Node.js has empowered JavaScript to handle server-side operations, making it possible to build entire applications with just one language. JavaScript is known for its large community and rich ecosystem of packages, tools, and resources. The importance of JavaScript in modern development cannot be overstated, making it a valuable skill for anyone interested in building interactive and engaging digital experiences",
-        "url": "http://localhost:5000/",
-        "views": "111",
-        "shares": "111",
-        "id": "b8c130f0-1a5a-42ba-94e3-6249e6d9bae9"
-    },
-    {
-        "content": "JavaScript is a versatile programming language that powers the dynamic behavior on websites. Originally developed to enhance web pages, it has now evolved into a robust language used for front-end, back-end, and even mobile development. JavaScript allows developers to add interactivity to websites, from simple animations to complex web applications. Today, it is an essential part of web development, often alongside HTML and CSS. Understanding JavaScript is critical as it is widely used across industries and offers vast career opportunities. The language is known for its flexibility due to its loosely typed nature, meaning variables can be reassigned to different data types without errors. This feature enables faster prototyping, though it requires careful handling in larger applications. Another important aspect is asynchronous programming with JavaScript. Through features like callbacks, promises, and async/await, JavaScript can handle multiple operations concurrently, crucial for applications that rely on data from servers or databases. Additionally, JavaScript's event-driven nature makes it perfect for handling user interactions. Frameworks and libraries like React, Angular, and Vue have revolutionized front-end development by allowing reusable components, state management, and easier DOM manipulation. On the backend, Node.js has empowered JavaScript to handle server-side operations, making it possible to build entire applications with just one language. JavaScript is known for its large community and rich ecosystem of packages, tools, and resources. The importance of JavaScript in modern development cannot be overstated, making it a valuable skill for anyone interested in building interactive and engaging digital experiences",
-        "shares": 18,
-        "title": "2Exploring Machine Learning Algorithms",
-        "url": "http://example.com/machine-learning-algorithms",
-        "views": 65,
-        "id": "11675968-6d9b-480a-9e9e-fe2cd12f8d5c"
-    },
-    {
-        "content": "JavaScript is a versatile programming language that powers the dynamic behavior on websites. Originally developed to enhance web pages, it has now evolved into a robust language used for front-end, back-end, and even mobile development. JavaScript allows developers to add interactivity to websites, from simple animations to complex web applications. Today, it is an essential part of web development, often alongside HTML and CSS. Understanding JavaScript is critical as it is widely used across industries and offers vast career opportunities. The language is known for its flexibility due to its loosely typed nature, meaning variables can be reassigned to different data types without errors. This feature enables faster prototyping, though it requires careful handling in larger applications. Another important aspect is asynchronous programming with JavaScript. Through features like callbacks, promises, and async/await, JavaScript can handle multiple operations concurrently, crucial for applications that rely on data from servers or databases. Additionally, JavaScript's event-driven nature makes it perfect for handling user interactions. Frameworks and libraries like React, Angular, and Vue have revolutionized front-end development by allowing reusable components, state management, and easier DOM manipulation. On the backend, Node.js has empowered JavaScript to handle server-side operations, making it possible to build entire applications with just one language. JavaScript is known for its large community and rich ecosystem of packages, tools, and resources. The importance of JavaScript in modern development cannot be overstated, making it a valuable skill for anyone interested in building interactive and engaging digital experiences",
-        "shares": 18,
-        "title": "2Exploring Machine Learning Algorithms",
-        "url": "http://example.com/machine-learning-algorithms",
-        "views": 65,
-        "id": "4be8a395-e158-463c-a437-d39b5e51de46"
+        "id": "659e329d-23d7-4f11-be34-e230df924402"
     }
 ]
