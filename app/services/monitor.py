@@ -23,6 +23,7 @@ class ArticleMonitor:
         """Checks for and processes new articles."""
         while True:
             try:
+                print(".")
                 # print("Scanning new article....")
                 articles = load_articles()
                 new_articles = [article for article in articles if article['id'] not in self.existing_ids]

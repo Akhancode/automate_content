@@ -1,4 +1,4 @@
-from diffusers import StableDiffusionPipeline
+
 import torch
 import random
 import requests
@@ -10,11 +10,7 @@ load_dotenv()
 class ImageGenerator:
     def __init__(self, default_image):
         self.default_image = default_image
-
-        # Load Stable Diffusion model
-        self.pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
-        self.pipe = self.pipe.to("cuda" if torch.cuda.is_available() else "cpu")
-
+        
     def generate_image_from_text_deep_ai(self,prompt):
         try:
             # Define the API endpoint for Text-to-Image
