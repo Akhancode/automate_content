@@ -5,6 +5,7 @@ import io
 import requests
 import json
 
+defaultImagePath = os.path.join("images", "cat.jpeg")
 
 def post_image_with_summary_on_linkedin(access_token, image_path, summary, linkedin_urn,articleUrl):
     # Step 1: Create an upload session
@@ -80,7 +81,7 @@ def post_image_with_summary_on_linkedin(access_token, image_path, summary, linke
         print(f"Error creating post: {post_response.status_code}, {post_response.text}")
 
 
-def mock_social_post(title, summary, image_url='D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg', article_url="https://example.com/full-article"):
+def mock_social_post(title, summary, image_url=defaultImagePath, article_url="https://example.com/full-article"):
     post = {
         "title": title,
         "summary": summary,

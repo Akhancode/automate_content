@@ -4,18 +4,20 @@ from flask import Blueprint, jsonify , request
 from .services import  save_engagment,image_generator
 from .models import Engagement
 from .services.social_poster import post_image_with_summary_on_linkedin
+
 # Blueprint for organizing routes
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/status', methods=['GET'])
 def status():
-    accessToken = os.getenv('LINKEDIN_API')
-    sub = os.getenv('LINKEDIN_APP_ID')
-    owner_id = f"urn:li:person:{sub}"
-    image_path = 'D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg'
-    summary = "Test summary"
-    result = post_image_with_summary_on_linkedin(accessToken,image_path,summary,owner_id)
-    return jsonify({"status": "Service is up and running","result":result})
+    # accessToken = os.getenv('LINKEDIN_API')
+    # sub = os.getenv('LINKEDIN_APP_ID')
+    # owner_id = f"urn:li:person:{sub}"
+    # image_path = 'D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg'
+    # summary = "Test summary"
+    # result = post_image_with_summary_on_linkedin(accessToken,image_path,summary,owner_id)
+  
+    return jsonify({"status": "Service is up and running"})
 @main_bp.route('/image-generate', methods=['GET'])
 def image_generate():
     data = request.get_json()
