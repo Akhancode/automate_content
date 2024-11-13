@@ -6,7 +6,7 @@ import requests
 import json
 
 
-def post_image_with_summary_on_linkedin(access_token, image_path, summary, linkedin_urn):
+def post_image_with_summary_on_linkedin(access_token, image_path, summary, linkedin_urn,articleUrl):
     # Step 1: Create an upload session
     upload_url_endpoint = "https://api.linkedin.com/v2/assets?action=registerUpload"
     headers = {
@@ -51,7 +51,7 @@ def post_image_with_summary_on_linkedin(access_token, image_path, summary, linke
         "specificContent": {
             "com.linkedin.ugc.ShareContent": {
                 "shareCommentary": {
-                    "text": summary  # This is the text summary of the post
+                    "text": f"{summary}\n\n{articleUrl}"  # This is the text summary of the post
                 },
                 "shareMediaCategory": "IMAGE",
                 "media": [{
@@ -75,27 +75,24 @@ def post_image_with_summary_on_linkedin(access_token, image_path, summary, linke
     post_response = requests.post(post_url, headers=headers, json=post_payload)
 
     if post_response.status_code == 201:
-        print("Post created successfully!")
+        print("LinkedIn Post created successfully!")
     else:
         print(f"Error creating post: {post_response.status_code}, {post_response.text}")
 
 
-# Example usage
-# access_token = 'your_access_token'  # Replace with your access token
-# image_path = 'path_to_your_image.jpg'  # Replace with the path to your image
-# summary = 'Here is a summary of the post with an image!'
-# linkedin_urn = "urn:li:person:your_linkedin_person_urn"  # Replace with your LinkedIn person or organization URN
-
-
-
-def mock_social_post(title, summary, image_url, article_url="https://example.com/full-article"):
+def mock_social_post(title, summary, image_url='D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg', article_url="https://example.com/full-article"):
     post = {
         "title": title,
         "summary": summary,
         "image_url": image_url,
         "article_url": article_url,
     }
-    print("💥Mock Social Media Post:", post)
+
+    accessToken = os.getenv('LINKEDIN_API')
+    sub = os.getenv('LINKEDIN_APP_ID')
+    owner_id = f"urn:li:person:{sub}"
+    post_image_with_summary_on_linkedin(accessToken, image_url, summary, owner_id,article_url)
+    # print("💥Mock Social Media Post:", post)
 
 
     return post

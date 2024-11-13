@@ -41,12 +41,12 @@ class ArticleMonitor:
     def process_article(self, article_data):
     #     """Process a new article."""
         try:
-              print(article_data)
+              print(f"New Article found with id : {article_data['id'] } and title : : {article_data['title'] }")
               articleSummary = self.content_processor.summarize(
                     article_data['content']
                 )
 
-              articleImage_url = "https://files.oaiusercontent.com/file-ZcGVGrCcMOG2e1nDaoc7EpRx?se=2024-11-13T12%3A04%3A42Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2b8868a4-9dff-4250-88c8-bb99ca08a2f0.webp&sig=HbHCd/wAITn7CfhvYlRt6OIWjQVp%2Bu/KCM0oIabXzUs%3D"
+              articleImage_url = 'D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg'
               # Generate Image using Stable ai
               if(os.getenv('DEVELOPMENT') != "true"):
                   articleImage_url = self.image_generator.generate_image_from_text(articleSummary)
