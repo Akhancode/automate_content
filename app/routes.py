@@ -1,9 +1,9 @@
 import os
-
+import tweepy
 from flask import Blueprint, jsonify , request ,render_template
 from .services import  save_engagment,image_generator
 from .models import Engagement
-from .services.social_poster import post_image_with_summary_on_linkedin
+from .services.social_poster import post_image_with_summary_on_linkedin,post_tweet_with_image
 from .utils import load_articles,append_article
 # Blueprint for organizing routes
 main_bp = Blueprint('main', __name__)
@@ -48,6 +48,9 @@ def add_article():
 
 @main_bp.route('/status', methods=['GET'])
 def status():
+    # Your Twitter API credentials
+    post_tweet_with_image("testing Summary xyz",os.path.join("images", "cat.jpeg"))
+
     return jsonify({"status": "Service is up and running"})
 @main_bp.route('/image-generate', methods=['GET'])
 def image_generate():

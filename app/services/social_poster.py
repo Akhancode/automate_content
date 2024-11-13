@@ -1,5 +1,6 @@
 # services/social_poster.py
 import os
+import tweepy
 import time
 import io
 import requests
@@ -79,6 +80,36 @@ def post_image_with_summary_on_linkedin(access_token, image_path, summary, linke
         print("LinkedIn Post created successfully!")
     else:
         print(f"Error creating post: {post_response.status_code}, {post_response.text}")
+
+
+def post_tweet_with_image(tweet_message, image_path):
+    # Your Twitter API credentials from environment variables
+    API_KEY = os.getenv('X_CONSUMER_API_KEY')
+    API_SECRET_KEY = os.getenv('X_CONSUMER_API_SECRET')
+    ACCESS_TOKEN = os.getenv('X_ACCESS_TOKEN_KEY')
+    ACCESS_TOKEN_SECRET = os.getenv('X_ACCESS_TOKEN_SECRET')
+    X_BEARER_TOKEN = os.getenv('X_BEARER_TOKEN')
+
+    # Initialize the Tweepy client with API credentials
+    client = tweepy.Client(
+        bearer_token=X_BEARER_TOKEN,
+        consumer_key=API_KEY,
+        consumer_secret=API_SECRET_KEY,
+        access_token=ACCESS_TOKEN,
+        access_token_secret=ACCESS_TOKEN_SECRET
+    )
+
+    # Authenticate using OAuth1 for media upload
+    auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
+    auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+    api = tweepy.API(auth)
+
+    # Upload media and post tweet
+    media = api.media_upload(image_path)
+    response = client.create_tweet(text=tweet_message, media_ids=[media.media_id])
+
+    print("Tweet posted successfully!", response)
+    return response
 
 
 def mock_social_post(title, summary, image_url=defaultImagePath, article_url="https://example.com/full-article"):
