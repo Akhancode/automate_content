@@ -37,8 +37,6 @@ def add_article():
 
     # Save the article data to a database or perform other operations
     append_article(data)
-    # Example: Save to a file or a database
-    print(f"Received article: {title}, {content}, {article_url}, {views}")
 
     # Return a success response
     response = {

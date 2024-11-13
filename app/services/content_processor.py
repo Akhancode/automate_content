@@ -19,7 +19,11 @@ class ContentProcessor:
         self.min_length = min_length
         self.do_sample = do_sample
         self.tokenizers = AutoTokenizer.from_pretrained("bert-base-uncased")
-
+    
+    def get_total_tokens(self, text):
+        # Tokenize the input text and return the total number of tokens
+        tokens = self.tokenizers.encode(text)
+        return len(tokens)
 
     def split_text_into_chunks(self,text, max_tokens=1024):
         # Tokenize the input text
@@ -56,9 +60,13 @@ class ContentProcessor:
 
         # option 2
         # Split the text into manageable chunks (e.g., 1024 tokens per chunk
+
+
+        totalTokens = self.get_total_tokens(text)
         text_chunks = self.split_text_into_chunks(text,1024)
         total_size_chunks = len(text_chunks)
-        if(total_size_chunks<self.max_length):
+
+        if(totalTokens<self.max_length):
             return text
         summaries = []
         max_length  = math.floor(self.max_length / total_size_chunks)
