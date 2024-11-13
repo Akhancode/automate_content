@@ -58,6 +58,8 @@ class ContentProcessor:
         # Split the text into manageable chunks (e.g., 1024 tokens per chunk
         text_chunks = self.split_text_into_chunks(text,1024)
         total_size_chunks = len(text_chunks)
+        if(total_size_chunks<self.max_length):
+            return text
         summaries = []
         max_length  = math.floor(self.max_length / total_size_chunks)
         for chunk in text_chunks:

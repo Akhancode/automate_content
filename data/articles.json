@@ -54,5 +54,37 @@
         "views": "3",
         "shares": "5",
         "id": "84744508-6992-4fa6-8529-40d3e3e2a6d3"
+    },
+    {
+        "title": "qwerty",
+        "content": "qwerty qwertyhujidnfmdnf",
+        "articleUrl": "https://stackoverflow.com/questions/33396064/flask-template-not-found",
+        "views": "3",
+        "shares": "5",
+        "id": "2c053dc0-b950-4d0f-b3b1-8f1fdda87d27"
+    },
+    {
+        "content": "Machine learning (ML) is a branch of artificial intelligence (AI) that allows systems to learn from data and improve over time without explicit programming. ML algorithms analyze patterns in historical data to make predictions or decisions, and they are widely used in applications like recommendation systems, image recognition, and predictive analytics. Some common types of ML algorithms include supervised learning, unsupervised learning, and reinforcement learning. In supervised learning, the algorithm is trained on labeled data, allowing it to predict outcomes based on input features. Unsupervised learning, on the other hand, deals with unlabeled data and is used for tasks like clustering and dimensionality reduction. Reinforcement learning enables an agent to make decisions in an environment to maximize some notion of cumulative reward. Popular algorithms include linear regression, decision trees, k-means clustering, and neural networks. With the rise of big data, ML has become more accessible, and frameworks like TensorFlow and Scikit-Learn have simplified model development. Despite its potential, ML comes with challenges such as data quality, bias, and the need for large computational resources. As organizations across industries adopt ML to automate processes and enhance products, understanding ML basics is essential for anyone interested in data-driven technology and AI applications.",
+        "shares": 18,
+        "title": "2Exploring Machine Learning Algorithms",
+        "url": "http://example.com/machine-learning-algorithms",
+        "views": 65,
+        "id": "24367b89-4f8e-4af9-9bf6-d43494e765cd"
+    },
+    {
+        "content": "Machine",
+        "shares": 18,
+        "title": "2Exploring Machine Learning Algorithms",
+        "url": "http://example.com/machine-learning-algorithms",
+        "views": 65,
+        "id": "1ca3d95c-d88d-4fd2-a72c-82b532d2818d"
+    },
+    {
+        "title": "test",
+        "content": "test-content",
+        "url": "http://localhost:5000/",
+        "views": "30",
+        "shares": "20",
+        "id": "9d3d8cae-6da9-443d-81b1-0046f9378131"
     }
 ]
