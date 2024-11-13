@@ -6,13 +6,13 @@ from app.services.content_processor import ContentProcessor
 from app.services.image_generator import ImageGenerator
 from app.services.social_poster import mock_social_post
 from app.services.save_engagment import  save_engagement
-
+defaultImagePath = os.path.join("images", "cat.jpeg")
 class ArticleMonitor:
     def __init__(self):
         self.existing_ids = set()
         self._initialize_existing_articles()
         self.content_processor = ContentProcessor()
-        self.image_generator = ImageGenerator("https://placeholder.com/400x300")
+        self.image_generator = ImageGenerator(defaultImagePath)
 
     def _initialize_existing_articles(self):
         """Loads initial articles into memory to track new ones."""
