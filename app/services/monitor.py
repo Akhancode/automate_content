@@ -1,4 +1,5 @@
 import time
+import os
 from flask import jsonify
 from app.utils import load_articles
 from app.services.content_processor import ContentProcessor
@@ -41,20 +42,23 @@ class ArticleMonitor:
     def process_article(self, article_data):
     #     """Process a new article."""
         try:
-              print(article_data)
+              print(f"New Article found with id : {article_data['id'] } and title : : {article_data['title'] }")
               articleSummary = self.content_processor.summarize(
                     article_data['content']
                 )
 
-
+              articleImage_url = 'D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg'
               # Generate Image using Stable ai
-              articleImage_url = self.image_generator.generate_image_from_text(articleSummary)
+              if(os.getenv('DEVELOPMENT') != "true"):
+                  articleImage_url = self.image_generator.generate_image_from_text(articleSummary)
+
+
 
               # Generate Image using Deep ai - no credit
               # articleImage_url = self.image_generator.generate_image_from_text_deep_ai(articleSummary)
 
               # Simulating the "post" with a print statement
-              mock_social_post(article_data["title"],articleSummary,articleImage_url,)
+              mock_social_post(article_data["title"],articleSummary,articleImage_url,article_url=article_data["url"])
               views = article_data.get("views",0)
               shares = article_data.get("shares",0)
 
