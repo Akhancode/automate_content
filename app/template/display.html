@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Display</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 py-10 px-6">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Cards Container with Flex and Wrap -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex justify-center items-center">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Add New Article</h2>
+            <form id="addArticleForm" action="/add-item" method="POST">
+                <div class="space-y-4">
+                    <div>
+                        <label for="title" class="block text-gray-700">Title</label>
+                        <input type="text" id="title" name="title" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="content" class="block text-gray-700">Content</label>
+                        <textarea id="content" name="content" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div>
+                        <label for="articleUrl" class="block text-gray-700">Article URL</label>
+                        <input type="url" id="articleUrl" name="articleUrl" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="views" class="block text-gray-700">Views</label>
+                        <input type="number" id="views" name="views" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="shares" class="block text-gray-700">Shares</label>
+                        <input type="number" id="shares" name="shares" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end space-x-4">
+                    <button type="button" id="cancelBtn" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Fetch articles on page load
+        window.onload = function() {
+            fetchArticles();
+        };
+
+        // Fetch articles from Flask backend
+        function fetchArticles() {
+            fetch('/get-articles')
+                .then(response => response.json())
+                .then(data => {
+                    // Render the fetched articles
+                    renderArticles(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching articles:', error);
+                });
+        }
+
+        // Render articles in the container
+        function renderArticles(articles) {
+            const container = document.getElementById('articles-container');
+            container.innerHTML = ''; // Clear any existing articles
+
+            articles.forEach(item => {
+                const card = document.createElement('div');
+                card.classList.add('bg-white', 'rounded-lg', 'shadow-xl', 'overflow-hidden', 'transform', 'hover:scale-105', 'transition', 'duration-300', 'ease-in-out');
+                card.innerHTML = `
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 hover:text-blue-600 transition duration-200">${item.title}</h3>
+                        <p class="text-gray-600 mt-4 text-lg">views : ${item?.views}</p>
+                        <p class="text-gray-600 mt-4 text-lg">shares : ${item?.shares}</p>
+                        <div class="mt-6">
+                            <a href="${item.articleurl}" class="text-blue-500 hover:text-blue-700 font-semibold text-lg">Read Article</a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Add "Add New Item" card
+            const addNewItemCard = document.createElement('div');
+            addNewItemCard.classList.add('bg-white', 'rounded-lg', 'shadow-xl', 'h-full', 'w-full', 'flex', 'justify-center', 'items-center', 'overflow-hidden', 'transform', 'hover:scale-105', 'transition', 'duration-300', 'ease-in-out', 'cursor-pointer');
+            addNewItemCard.id = 'addNewItemCard';
+            addNewItemCard.innerHTML = `
+                <div class="p-6 h-full w-full flex justify-center items-center">
+                    <h3 class="text-xl font-semibold text-gray-800">+ Add New Article</h3>
+                </div>
+            `;
+            container.appendChild(addNewItemCard);
+            
+            // Modal and form handling
+            addNewItemCard.addEventListener('click', () => {
+                document.getElementById('modal').classList.remove('hidden');
+            });
+
+            document.getElementById('cancelBtn').addEventListener('click', () => {
+                document.getElementById('modal').classList.add('hidden');
+            });
+
+            // Form submission handling
+            document.getElementById('addArticleForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const dataObj = {
+                    title: document.getElementById('title').value,
+                    content: document.getElementById('content').value,
+                    articleUrl: document.getElementById('articleUrl').value,
+                    views: document.getElementById('views').value,
+                    shares: document.getElementById('shares').value,
+                };
+                handleSubmit(dataObj);
+            });
+        }
+
+        // Handle form submission
+        function handleSubmit(dataObj) {
+            fetch('/add-article', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dataObj),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                document.getElementById('modal').classList.add('hidden');
+                location.reload(); // Refresh page to show the new article
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,22 +1,55 @@
 import os
 
-from flask import Blueprint, jsonify , request
+from flask import Blueprint, jsonify , request ,render_template
 from .services import  save_engagment,image_generator
 from .models import Engagement
 from .services.social_poster import post_image_with_summary_on_linkedin
-
+from .utils import load_articles,append_article
 # Blueprint for organizing routes
 main_bp = Blueprint('main', __name__)
 
+
+sample_data = {
+    "name": "John Doe",
+    "age": 30,
+    "email": "john.doe@example.com",
+    "interests": ["programming", "reading", "hiking"]
+}
+
+@main_bp.route('/')
+def display_json():
+    return render_template('display.html')
+
+@main_bp.route('/get-articles', methods=['GET'])
+def get_articles():
+    # Load articles from your data source (e.g., database, file)
+    articles = load_articles()  # Assume this function fetches the articles
+    return jsonify(articles)
+
+
+@main_bp.route('/add-article', methods=['POST'])
+def add_article():
+    data = request.get_json()  # Get the JSON data from the frontend
+    title = data.get('title')
+    content = data.get('content')
+    article_url = data.get('articleUrl')
+    views = data.get('views')
+
+    # Save the article data to a database or perform other operations
+    append_article(data)
+    # Example: Save to a file or a database
+    print(f"Received article: {title}, {content}, {article_url}, {views}")
+
+    # Return a success response
+    response = {
+        'status': 'success',
+        'message': 'Article added successfully',
+    }
+    return jsonify(response)
+
+
 @main_bp.route('/status', methods=['GET'])
 def status():
-    # accessToken = os.getenv('LINKEDIN_API')
-    # sub = os.getenv('LINKEDIN_APP_ID')
-    # owner_id = f"urn:li:person:{sub}"
-    # image_path = 'D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg'
-    # summary = "Test summary"
-    # result = post_image_with_summary_on_linkedin(accessToken,image_path,summary,owner_id)
-  
     return jsonify({"status": "Service is up and running"})
 @main_bp.route('/image-generate', methods=['GET'])
 def image_generate():
@@ -24,10 +57,6 @@ def image_generate():
     img=image_generator.ImageGenerator("https://placeholder.com/400x300")
     # using - stable diffusion api
     imageurl =img.generate_image_from_text(data["prompt"])
-
-    # imageurl =img.generate_image_replicate(data["prompt"])
-    # imageurl =img.generate_image_from_text_deep_ai(data["prompt"])
-    # imageurl =img.generate_dalle_image(data["prompt"])
 
     print(imageurl)
     return jsonify({"imageUrl": imageurl})
