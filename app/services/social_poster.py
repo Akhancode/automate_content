@@ -29,12 +29,9 @@ def post_image_with_summary_on_linkedin(access_token, image_path, summary, linke
                 }]
             }
         }
-        print(json.dumps(payload))
 
         # Create upload session
-        response = requests.post(upload_url_endpoint, headers=headers, json=payload)
-        print(response)
-        print("access_token, image_path, summary, linkedin_urn,articleUrl")
+        response = requests.post(upload_url_endpoint, headers=headers, json=payload , timeout=10)
         
         if response.status_code != 200:
             print(f"Error creating upload session: {response.status_code}, {response.text}")
