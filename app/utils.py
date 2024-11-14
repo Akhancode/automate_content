@@ -11,6 +11,23 @@ def generate_unique_id(articles):
         new_id = str(uuid.uuid4()) 
     return new_id
 
+def truncate_tweet_text(summary, article_url, max_length=280):
+    # Reserve characters for URL and newlines
+    url_length = len(article_url)
+    spacing = len("\n\n")  # for the two newlines
+    
+    # Calculate remaining characters for summary
+    available_chars = max_length - (url_length + spacing)
+    
+    if available_chars <= 0:
+        # If URL itself is too long (shouldn't happen with normal URLs)
+        return article_url
+    
+    # Truncate summary if needed and add ellipsis
+    if len(summary) > available_chars:
+        summary = summary[:available_chars-3] + "..."
+    
+    return f"{summary}\n\n{article_url}"
 
 def load_articles():
     """Loads articles from JSON feed."""

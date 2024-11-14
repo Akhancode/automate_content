@@ -36,6 +36,16 @@ class ContentProcessor:
         chunk_texts = [self.tokenizers.decode(chunk, skip_special_tokens=True) for chunk in chunks]
 
         return chunk_texts
+    def promptFromSummary(self,summary):
+        prompt = self.summarizer(
+            summary,
+            max_length=35,
+            min_length=10,
+            do_sample=self.do_sample,
+            truncation=True
+        )
+        return f"Create an Image from the following summary :  {prompt[0]['summary_text']}"
+    
     def summarize(self, text):
         """
         Generates a summary of the given text.

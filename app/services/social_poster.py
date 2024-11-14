@@ -5,7 +5,7 @@ import tweepy
 import time
 import io
 import json
-
+from ..utils import truncate_tweet_text
 defaultImagePath = os.path.join("images", "cat.jpeg")
 
 def post_image_with_summary_on_linkedin(access_token, image_path, summary, linkedin_urn,articleUrl):
@@ -85,33 +85,48 @@ def post_image_with_summary_on_linkedin(access_token, image_path, summary, linke
         print(f"Error linked in  article: {e}")
 
 def post_tweet_with_image(summary,articleUrl, image_path):
-    # Your Twitter API credentials from environment variables
-    API_KEY = os.getenv('X_CONSUMER_API_KEY')
-    API_SECRET_KEY = os.getenv('X_CONSUMER_API_SECRET')
-    ACCESS_TOKEN = os.getenv('X_ACCESS_TOKEN_KEY')
-    ACCESS_TOKEN_SECRET = os.getenv('X_ACCESS_TOKEN_SECRET')
-    X_BEARER_TOKEN = os.getenv('X_BEARER_TOKEN')
+    try:
+        # Your Twitter API credentials from environment variables
+        API_KEY = os.getenv('X_CONSUMER_API_KEY')
+        API_SECRET_KEY = os.getenv('X_CONSUMER_API_SECRET')
+        ACCESS_TOKEN = os.getenv('X_ACCESS_TOKEN_KEY')
+        ACCESS_TOKEN_SECRET = os.getenv('X_ACCESS_TOKEN_SECRET')
+        X_BEARER_TOKEN = os.getenv('X_BEARER_TOKEN')
 
-    # Initialize the Tweepy client with API credentials
-    client = tweepy.Client(
-        bearer_token=X_BEARER_TOKEN,
-        consumer_key=API_KEY,
-        consumer_secret=API_SECRET_KEY,
-        access_token=ACCESS_TOKEN,
-        access_token_secret=ACCESS_TOKEN_SECRET
-    )
+        # Initialize the Tweepy client with API credentials
+        client = tweepy.Client(
+            bearer_token=X_BEARER_TOKEN,
+            consumer_key=API_KEY,
+            consumer_secret=API_SECRET_KEY,
+            access_token=ACCESS_TOKEN,
+            access_token_secret=ACCESS_TOKEN_SECRET
+        )
 
-    # Authenticate using OAuth1 for media upload
-    auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
-    auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-    api = tweepy.API(auth)
+        # Authenticate using OAuth1 for media upload
+        auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+        api = tweepy.API(auth)
 
-    # Upload media and post tweet
-    media = api.media_upload(image_path)
-    response = client.create_tweet(text=f"{summary}\n\n{articleUrl}", media_ids=[media.media_id])
 
-    print("Tweet posted successfully!", response)
-    return response
+        # Upload media and post tweet
+        media = api.media_upload(image_path)
+     
+        tweetText = truncate_tweet_text(summary,articleUrl , 280)
+        tweet_payload = {
+            "text":tweetText, #f"{summary}\n\n{articleUrl}",
+            "media_ids": [str(media.media_id)]
+        }
+        response = client.create_tweet(**tweet_payload)
+
+
+        print("Tweet posted successfully!")
+        return response
+    except tweepy.errors.Forbidden as e:
+        print(f"Forbidden error: {str(e)}")
+        print(f"Error code: {e.response.status_code}")
+        print(f"Error message: {e.response.text}")
+    except Exception as e:
+        print(f"Other error: {str(e)}")
 
 
 def mock_social_post(title, summary, image_url=defaultImagePath, article_url="https://example.com/full-article"):
@@ -125,7 +140,7 @@ def mock_social_post(title, summary, image_url=defaultImagePath, article_url="ht
     accessToken = os.getenv('LINKEDIN_API')
     sub = os.getenv('LINKEDIN_APP_ID')
     owner_id = f"urn:li:person:{sub}"
-    print("hdfkdf")
+    print("posting ...")
     post_image_with_summary_on_linkedin(accessToken, image_url, summary, owner_id,article_url)
     post_tweet_with_image(summary,article_url,image_url)
     # print("💥Mock Social Media Post:", post)

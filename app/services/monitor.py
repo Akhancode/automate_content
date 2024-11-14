@@ -48,12 +48,14 @@ class ArticleMonitor:
                 )
 
               articleImage_url = 'D:/Personal/Interview Assessment/LCX/BE/images/cat.jpeg'
+            #   imagePrompt = self.content_processor.promptFromSummary(articleSummary)
+          
               # Generate Image using Stable ai
               if(os.getenv('DEVELOPMENT') != "true"):
                   articleImage_url = self.image_generator.generate_image_from_text(articleSummary)
 
 
-
+              print("articleImage_url  " , articleImage_url)
               # Generate Image using Deep ai - no credit
               # articleImage_url = self.image_generator.generate_image_from_text_deep_ai(articleSummary)
 
