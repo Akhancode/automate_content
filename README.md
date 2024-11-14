@@ -86,6 +86,28 @@ This project automates the process of detecting new articles from a JSON feed, g
 
 9. **Access the application**: By default, the server will run on [http://localhost:5000](http://localhost:5000).
 
+## User Instruction
+
+1. Start the Flask Server
+2. Open http://localhost:5000 in your web browser.
+   
+   -[![Screenshot-2024-11-14-141743.png](https://i.postimg.cc/zXdm5YgL/Screenshot-2024-11-14-141743.png)](https://postimg.cc/7fTtMcXD)
+
+4. **Add a New Article**: On the web page, fill out the form fields to add a new article.
+    - Submitting the form updates the article.json file
+
+5. **Monitor Changes**: A Python script running in a separate thread monitors article.json for changes.
+    This script detects new articles and triggers automated content processing, allowing the main thread (Flask server) to remain responsive.
+
+6. **Check Console Logs**: Keep an eye on the terminal or console to see logs of the processing steps, including:
+    - Summary generation
+    - AI-driven image creation (if credits are available)
+    - Simulated social media posts (printed in logs)
+      
+7. **Simulated Social Media Posts**: The script prints simulated LinkedIn and Twitter posts in the console. Note: No actual posts are made to     social media.
+   [![Screenshot-2024-11-14-142321.png](https://i.postimg.cc/JngyS25S/Screenshot-2024-11-14-142321.png)](https://postimg.cc/34XJv96Z)
+
+
 ## Usage
 
 1. **Monitor JSON Feed**: The script will automatically detect new articles from a local JSON feed (`feed.json`). You can simulate adding new articles with **NOT EXISTING UNIQUE ID** to this file to trigger the automation. Please Note : Default values will not feed  as it may triggers the processing API and to Avoid Image Generation from getting Exhaust (only 10 credits) before testing  . Monitoring function will scan for change in JSON and all of this related to monitoring will run in seperate thread so the main thread remain open to REST api.
