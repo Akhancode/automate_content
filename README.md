@@ -104,7 +104,11 @@ This project automates the process of detecting new articles from a JSON feed, g
     - AI-driven image creation (if credits are available)
     - Simulated social media posts (printed in logs)
       
-7. **Simulated Social Media Posts**: The script prints simulated LinkedIn and Twitter posts in the console. Note: No actual posts are made to     social media.
+7. **Simulated Social Media Posts**: The script prints simulated LinkedIn and Twitter posts in the console.
+    Following are the links to socialmedias.
+    - [LinkedIn ](https://www.linkedin.com/in/f-schuppe-4b6588338/recent-activity/all/)
+    - [X.com (Twitter) ](https://x.com/SchuppeFelicia)
+
    [![Screenshot-2024-11-14-142321.png](https://i.postimg.cc/JngyS25S/Screenshot-2024-11-14-142321.png)](https://postimg.cc/34XJv96Z)
 
 
