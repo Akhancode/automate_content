@@ -37,11 +37,23 @@ This project automates the process of detecting new articles from a JSON feed, g
     ```
 
 3. **Create a virtual environment** (recommended):
-    ```bash
-    python3 -m venv venv
-    ```
+    - On prefered:
+      ```bash
+      pip install virtualenv
+      ```
+      ```bash
+      virtualenv venv
+      ```
+      OR
+      
+    - Or use this:
+       ```bash
+        python3 -m venv venv
+        ```
+   
+    
 
-4. **Activate the virtual environment**:
+5. **Activate the virtual environment**:
     - On macOS/Linux:
       ```bash
       source venv/bin/activate
@@ -51,12 +63,12 @@ This project automates the process of detecting new articles from a JSON feed, g
       .\venv\Scripts\activate
       ```
 
-5. **Install dependencies**:
+6. **Install dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
 
-6. **Set up environment variables**:
+7. **Set up environment variables**:
     Create a `.env` file in the root directory with the following variables:
    - [Download env file ](https://drive.google.com/file/d/1psB2vfGBG3EbTeljT3FtalMngTmg30ha/view?usp=sharing)
  
@@ -65,6 +77,9 @@ This project automates the process of detecting new articles from a JSON feed, g
     ```
 
 8. **Run the server**:
+    ```bash
+    set FLASK_APP=run.py
+    ```
     ```bash
     flask run
     ```
