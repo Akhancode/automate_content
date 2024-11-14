@@ -70,13 +70,23 @@ This project automates the process of detecting new articles from a JSON feed, g
 
 7. **Set up environment variables**:
     Create a `.env` file in the root directory with the following variables:
-   - [Download env file ](https://drive.google.com/file/d/1psB2vfGBG3EbTeljT3FtalMngTmg30ha/view?usp=sharing)
+   
+   - [Download env file ](https://drive.google.com/file/d/1vY-Z_xF3Jjzf6QnjP7yrvUSif0l71g82/view?usp=sharing)
  
     ```plaintext
-    STABILITY_API_KEY = api_key
+   STABILITY_API_KEY : <SECRET>
+    DEVELOPMENT : false / true
+    LINKEDIN_APP_ID : <SECRET>
+    LINKEDIN_API: <SECRET>
+    X_CONSUMER_API_KEY: <SECRET>
+    X_CONSUMER_API_SECRET: <SECRET>
+    X_ACCESS_TOKEN_KEY: <SECRET>
+    X_ACCESS_TOKEN_SECRET: <SECRET>
+    X_CLIENT_SECRET: <SECRET>
+    X_BEARER_TOKEN: <SECRET>
     ```
 
-8. **Run the server**:
+9. **Run the server**:
     ```bash
     set FLASK_APP=run.py
     ```
@@ -84,7 +94,7 @@ This project automates the process of detecting new articles from a JSON feed, g
     flask run
     ```
 
-9. **Access the application**: By default, the server will run on [http://localhost:5000](http://localhost:5000).
+10. **Access the application**: By default, the server will run on [http://localhost:5000](http://localhost:5000).
 
 ## User Instruction
 
